@@ -31,10 +31,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-
-        // 🟢 Register global CORS middleware (correct for Laravel 11)
         $middleware->use([
-            HandleCors::class,
+            \App\Http\Middleware\Cors::class,
         ]);
 
     })
