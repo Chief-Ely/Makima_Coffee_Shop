@@ -1,1 +1,1 @@
-web: php -S 0.0.0.0:$PORT -t public
+web: frankenphp run --config /Caddyfile --workers 2 --max-requests 500 public/
