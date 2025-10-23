@@ -13,6 +13,8 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::post('/cart', [CartController::class, 'store']);
 Route::put('/cart/amounts', [CartController::class, 'updateAmounts']);
 Route::post('/cart/checkout', [CartController::class, 'checkout']);
+Route::delete('/cart/{id}', [CartController::class, 'destroy']);
+
 
 Route::get('/coffee', [CoffeeController::class, 'index']);
 Route::post('/coffee', [CoffeeController::class, 'store']);

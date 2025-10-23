@@ -120,6 +120,29 @@ class CartController extends Controller
         ]);
     }
 
+    // 🗑️ Delete a specific cart item by ID
+    public function destroy($id)
+    {
+        $cartItem = Cart::find($id);
+
+        if (!$cartItem) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Cart item not found.'
+            ], 404);
+        }
+
+        $cartItem->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Cart item deleted successfully.'
+        ]);
+    }
+
+
+
+
 
 
 }

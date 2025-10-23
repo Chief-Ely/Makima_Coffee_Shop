@@ -22,9 +22,10 @@
 return [
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
     'allowed_methods' => ['*'],
-    'allowed_origins' => ["*"],
+    'allowed_origins' => ["https://makima-coffee-shop-frontend.vercel.app"],
+    'allowed_origins_patterns' => ["*.vercel.app"],
     'allowed_headers' => ['*'],
     'supports_credentials' => true,
-    'max-age' => 24 * 3600
+    'max_age' => 24 * 3600
 ];
 
